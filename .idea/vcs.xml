@@ -1,77 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../capsul" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304182302" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304182323" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304182403" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304183350" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304183516" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304183612" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304183833" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304184146" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304184449" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304184612" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304184754" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304184938" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304185101" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304185232" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304185327" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304185635" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304185910" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304190144" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190304190244" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305162107" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305162605" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305164610" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305171548" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305171855" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305180355" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305180524" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305181951" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305182154" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190305182350" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306104020" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306104750" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306111140" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306112351" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306114457" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306114615" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306114808" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306115111" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306115236" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306115856" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306140726" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306174444" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306190714" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190306190844" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307085120" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307085651" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307090255" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307090700" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307090931" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307091256" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307101120" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307101659" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307101754" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307102941" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307103555" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307104616" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307105026" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307112932" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307113318" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307114033" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307115847" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307120428" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307120648" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307124144" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307124627" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307133531" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307133845" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307134349" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307135445" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307135819" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190307140823" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190311105444" vcs="Git" />
   </component>
 </project>

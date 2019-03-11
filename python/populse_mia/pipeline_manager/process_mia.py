@@ -100,6 +100,7 @@ class ProcessMIA(Process):
         for output_name in outputs:
             output_value = outputs[output_name]
 
+            #Modif Ludo
             if not isinstance(output_value, np.ndarray):
                 if output_value not in ["<undefined>", Undefined]:
                     if type(output_value) in [list, TraitListObject]:
