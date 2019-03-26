@@ -1358,6 +1358,11 @@ class PipelineEditor(PipelineDevelopperView):
                             for key, value in six.iteritems(self.scene.pos)])
             dimdict = dict([(key, (value[0], value[1])) \
                             for key, value in six.iteritems(self.scene.dim)]) #add by Irmage OM
+            print('Saving Pipeline')
+            print(posdict)
+            print(dimdict)
+            print(pipeline.get_outputs())
+            print(pipeline.get_inputs())
             
             pipeline.node_dimension = dimdict # add by Irmage OM
             

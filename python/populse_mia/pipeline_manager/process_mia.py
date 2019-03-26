@@ -7,7 +7,7 @@
 ##########################################################################
 
 import datetime
-import numpy as np
+from numpy import  ndarray
 from traits.trait_base import Undefined
 from traits.trait_handlers import TraitListObject
 
@@ -85,12 +85,14 @@ class ProcessMIA(Process):
         outputs = self.get_outputs()
         for output_name in outputs:
             output_value = outputs[output_name]
-            if output_value not in ["<undefined>", Undefined]:
-                if type(output_value) in [list, TraitListObject]:
-                    for single_value in output_value:
-                        self.manage_brick_output_before_run(single_value)
-                else:
-                    self.manage_brick_output_before_run(output_value)
+
+            if not isinstance(output_value, ndarray): #Modif Ludo
+                if output_value not in ["<undefined>", Undefined]:
+                    if type(output_value) in [list, TraitListObject]:
+                        for single_value in output_value:
+                            self.manage_brick_output_before_run(single_value)
+                    else:
+                        self.manage_brick_output_before_run(output_value)
 
     def manage_brick_after_run(self):
         """
@@ -100,8 +102,7 @@ class ProcessMIA(Process):
         for output_name in outputs:
             output_value = outputs[output_name]
 
-            #Modif Ludo
-            if not isinstance(output_value, np.ndarray):
+            if not isinstance(output_value, ndarray):  #Modif Ludo
                 if output_value not in ["<undefined>", Undefined]:
                     if type(output_value) in [list, TraitListObject]:
                         for single_value in output_value:

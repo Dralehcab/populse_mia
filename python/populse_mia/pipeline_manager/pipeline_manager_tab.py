@@ -532,6 +532,7 @@ class PipelineManagerTab(QWidget):
 
         :param iteration_list: current list of scans in the iteration table
         """
+        print('In Update Scan List')
         if self.iterationTable.check_box_iterate.isChecked():
             self.iteration_table_scans_list = iteration_list
             self.pipelineEditorTabs.scan_list = iteration_list
@@ -1136,12 +1137,19 @@ class PipelineManagerTab(QWidget):
         QApplication.processEvents()
 
         if self.iterationTable.check_box_iterate.isChecked():
+            print('Run Pipeline')
             iterated_tag = self.iterationTable.iterated_tag
             tag_values = self.iterationTable.tag_values_list
             ui_iteration = PopUpSelectIteration(iterated_tag, tag_values)
+            print('*')
+            print(tag_values)
             if ui_iteration.exec():
                 tag_values = ui_iteration.final_values
+                print('**')
+                print(tag_values)
                 for tag_value in tag_values:
+                    print('***')
+                    print(tag_value)
 
                     # Status bar update
                     self.main_window.statusBar().showMessage(
