@@ -101,7 +101,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         self.assertEqual(self.main_window.project.getName(), "project_8")
         self.assertEqual(self.main_window.windowTitle(), "MIA - Multiparametric Image Analysis - project_8")
@@ -136,7 +136,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         # Testing without tag name
         self.main_window.data_browser.add_tag_action.trigger()
@@ -224,7 +224,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         # Testing without new tag name
         self.main_window.data_browser.clone_tag_action.trigger()
@@ -323,7 +323,7 @@ class TestMIADataBrowser(unittest.TestCase):
         """
 
         # Testing default tags visibility
-        visibles = self.main_window.project.session.get_visibles()
+        visibles = self.main_window.project.session.get_shown_tags()
         self.assertEqual(len(visibles), 4)
         self.assertTrue(TAG_FILENAME in visibles)
         self.assertTrue(TAG_BRICKS in visibles)
@@ -373,7 +373,7 @@ class TestMIADataBrowser(unittest.TestCase):
         self.assertTrue(TAG_EXP_TYPE in visibles_tags)
         QTest.mouseClick(settings.push_button_ok, Qt.LeftButton)
 
-        new_visibles = self.main_window.project.session.get_visibles()
+        new_visibles = self.main_window.project.session.get_shown_tags()
         self.assertEqual(len(new_visibles), 3)
         self.assertTrue(TAG_FILENAME in new_visibles)
         self.assertTrue(TAG_EXP_TYPE in new_visibles)
@@ -397,7 +397,7 @@ class TestMIADataBrowser(unittest.TestCase):
         QTest.mouseClick(settings.tab_tags.push_button_select_tag, Qt.LeftButton)
         QTest.mouseClick(settings.push_button_ok, Qt.LeftButton)
 
-        new_visibles = self.main_window.project.session.get_visibles()
+        new_visibles = self.main_window.project.session.get_shown_tags()
         self.assertEqual(len(new_visibles), 4)
         self.assertTrue(TAG_FILENAME in new_visibles)
         self.assertTrue(TAG_EXP_TYPE in new_visibles)
@@ -423,7 +423,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         # Checking that the 8 scans are shown in the databrowser
         self.assertEqual(self.main_window.data_browser.table_data.rowCount(), 9)
@@ -495,7 +495,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         scans_displayed = []
         for row in range(0, self.main_window.data_browser.table_data.rowCount()):
@@ -576,7 +576,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         scans_displayed = []
         for row in range(0, self.main_window.data_browser.table_data.rowCount()):
@@ -623,7 +623,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         value = float(self.main_window.project.session.get_value(COLLECTION_CURRENT, "data/raw_data/Guerbet-C6-2014-Rat-K52-Tube27-2014-02-14_10-23-17-02-G1_Guerbet_Anat-RARE__pvm_-00-02-20.000.nii", "BandWidth"))
         value_initial = float(self.main_window.project.session.get_value(COLLECTION_INITIAL, "data/raw_data/Guerbet-C6-2014-Rat-K52-Tube27-2014-02-14_10-23-17-02-G1_Guerbet_Anat-RARE__pvm_-00-02-20.000.nii", "BandWidth"))
@@ -657,7 +657,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         bandwidth_column = self.main_window.data_browser.table_data.get_tag_column("BandWidth")
 
@@ -713,7 +713,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         bandwidth_column = self.main_window.data_browser.table_data.get_tag_column("BandWidth")
 
@@ -805,7 +805,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         bw_column = self.main_window.data_browser.table_data.get_tag_column("BandWidth")
 
@@ -869,7 +869,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         # Checking that the pipeline manager has an empty list at the beginning
         self.assertEqual(self.main_window.pipeline_manager.scan_list, [])
@@ -944,7 +944,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         mixed_bandwidths = []
         for row in range(0, self.main_window.data_browser.table_data.rowCount()):
@@ -1021,7 +1021,7 @@ class TestMIADataBrowser(unittest.TestCase):
         self.assertEqual(auto_save, "no")
 
         # Checking that the values for the "Projects preferences" are well set
-        self.assertEqual(config.get_max_projects(), 5.0)
+        self.assertEqual(config.get_max_projects(), 5)
         self.assertEqual(config.get_projects_save_path(), os.path.join(config.get_mia_path(), 'projects'))
 
     def test_undo_redo_databrowser(self):
@@ -1032,7 +1032,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         self.assertEqual(self.main_window.project.undos, [])
         self.assertEqual(self.main_window.project.redos, [])
@@ -1116,7 +1116,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         QTest.mouseClick(self.main_window.data_browser.count_table_button, Qt.LeftButton)
         count_table = self.main_window.data_browser.count_table_pop_up
@@ -1169,7 +1169,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         # Selecting a cell
         bw_column = self.main_window.data_browser.table_data.get_tag_column("BandWidth")
@@ -1198,7 +1198,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         self.main_window.data_browser.open_filter_action.trigger()
         open_popup = self.main_window.data_browser.popUp
@@ -1225,7 +1225,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         bricks_column = self.main_window.data_browser.table_data.get_tag_column("Bricks")
         bricks_widget = self.main_window.data_browser.table_data.cellWidget(8, bricks_column)
@@ -1267,7 +1267,7 @@ class TestMIADataBrowser(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         self.main_window.data_browser.table_data.itemChanged.disconnect()
         self.main_window.data_browser.table_data.multiple_sort_pop_up()
@@ -1768,7 +1768,6 @@ class TestMIAPipelineManager(unittest.TestCase):
         config = Config()
 
         # Forcing the exit and disabling the init progressbar
-        self.main_window.force_exit = True
         self.main_window.pipeline_manager.disable_progress_bar = True
 
         # Adding the processes path to the system path
@@ -1813,7 +1812,7 @@ class TestMIAPipelineManager(unittest.TestCase):
         pipeline.nodes['smooth1'].set_plug_value('out_prefix', 'TEST')
 
         # Initialization of the pipeline
-        self.main_window.pipeline_manager.initPipeline()
+        self.main_window.pipeline_manager.init_pipeline()
 
         # Verifying the results
         self.assertEqual(pipeline.nodes['smooth1'].get_plug_value('_smoothed_files'),
@@ -1821,175 +1820,175 @@ class TestMIAPipelineManager(unittest.TestCase):
         self.assertEqual(pipeline.nodes['test_pipeline1'].get_plug_value('_smoothed_files'),
                          os.path.abspath(os.path.join(folder, 'sTEST' + nii_file)))
 
-    '''def test_init_MIA_processes(self):
-        """
-        Adds all the tools processes, initializes and runs the pipeline
-        """
-
-        # Forcing the exit
-        self.main_window.force_exit = True
-
-        # Adding the processes path to the system path
-        import sys
-        sys.path.append(os.path.join('..', '..', 'processes'))
-
-        pipeline_editor_tabs = self.main_window.pipeline_manager.pipelineEditorTabs
-
-        pipeline_editor_tabs.get_current_editor().click_pos = QtCore.QPoint(450, 500)
-
-        # Importing the package
-        package_name = 'MIA_processes.IRMaGe.Tools'
-        __import__(package_name)
-        pkg = sys.modules[package_name]
-        process_class = None
-        for name, cls in sorted(list(pkg.__dict__.items())):
-            if name != "Input_Filter":
-                try:
-                    proc_instance = get_process_instance(cls)
-                except:
-                    pass
-                else:
-                    print("class", cls)
-                    process_class = cls
-                    pipeline_editor_tabs.get_current_editor().add_process(process_class)
-
-        pipeline = pipeline_editor_tabs.get_current_pipeline()
-
-        # Verifying that all the processes are here
-        self.assertTrue('duplicate_file1' in pipeline.nodes.keys())
-        self.assertTrue('find_in_list1' in pipeline.nodes.keys())
-        self.assertTrue('files_to_list1' in pipeline.nodes.keys())
-        self.assertTrue('list_to_file1' in pipeline.nodes.keys())
-        self.assertTrue('list_duplicate1' in pipeline.nodes.keys())
-        self.assertTrue('roi_list_generator1' in pipeline.nodes.keys())
-
-        # Setting values to verify that the initialization works well
-        pipeline.nodes['duplicate_file1'].set_plug_value('file1', 'test_file.txt')
-        pipeline.nodes['find_in_list1'].set_plug_value('in_list', ['test1.txt', 'test2.txt'])
-        pipeline.nodes['find_in_list1'].set_plug_value('pattern', '1')
-        pipeline.nodes['files_to_list1'].set_plug_value('file1', 'test1.txt')
-        pipeline.nodes['files_to_list1'].set_plug_value('file2', 'test2.txt')
-        pipeline.nodes['list_to_file1'].set_plug_value('file_list', ['test1.txt', 'test2.txt'])
-        pipeline.nodes['list_duplicate1'].set_plug_value('file_name', 'test_file.txt')
-        pipeline.nodes['roi_list_generator1'].set_plug_value('pos', ['TEST1', 'TEST2'])
-
-        # Initialization/run of the pipeline
-        self.main_window.pipeline_manager.initPipeline()
-        self.main_window.pipeline_manager.runPipeline()
-
-        # Verifying the results
-        self.assertEqual(pipeline.nodes['duplicate_file1'].get_plug_value('out_file1'), 'test_file.txt')
-        self.assertEqual(pipeline.nodes['duplicate_file1'].get_plug_value('out_file2'), 'test_file.txt')
-        self.assertEqual(pipeline.nodes['find_in_list1'].get_plug_value('out_file'), 'test1.txt')
-        self.assertEqual(pipeline.nodes['files_to_list1'].get_plug_value('file_list'), ['test1.txt', 'test2.txt'])
-        self.assertEqual(pipeline.nodes['list_to_file1'].get_plug_value('file'), 'test1.txt')
-        self.assertEqual(pipeline.nodes['list_duplicate1'].get_plug_value('out_list'), ['test_file.txt'])
-        self.assertEqual(pipeline.nodes['list_duplicate1'].get_plug_value('out_file'), 'test_file.txt')
-        self.assertEqual(pipeline.nodes['roi_list_generator1'].get_plug_value('roi_list'), [['TEST1', '_L'],
-                                                                                            ['TEST1', '_R'],
-                                                                                            ['TEST2', '_L'],
-                                                                                            ['TEST2', '_R']])
-
-    def test_init_SPM_pre_processes(self):
-        """
-        Adds all SPM pre-processes and initializes the pipeline
-        """
-
-        # Forcing the exit
-        self.main_window.force_exit = True
-
-        # Adding the processes path to the system path
-        import sys
-        sys.path.append(os.path.join('..', '..', 'processes'))
-
-        pipeline_editor_tabs = self.main_window.pipeline_manager.pipelineEditorTabs
-
-        pipeline_editor_tabs.get_current_editor().click_pos = QtCore.QPoint(450, 500)
-
-        # Importing the package
-        package_name = 'MIA_processes.SPM'
-        __import__(package_name)
-        pkg = sys.modules[package_name]
-        process_class = None
-        preproc_list = ['Smooth', 'NewSegment', 'Normalize', 'Realign', 'Coregister']
-        for name, cls in sorted(list(pkg.__dict__.items())):
-            if name in preproc_list:
-                try:
-                    proc_instance = get_process_instance(cls)
-                except:
-                    pass
-                else:
-                    process_class = cls
-                    pipeline_editor_tabs.get_current_editor().add_process(process_class)
-
-        pipeline = pipeline_editor_tabs.get_current_pipeline()
-
-        # Verifying that all the processes are here
-        self.assertTrue('smooth1' in pipeline.nodes.keys())
-        self.assertTrue('newsegment1' in pipeline.nodes.keys())
-        self.assertTrue('normalize1' in pipeline.nodes.keys())
-        self.assertTrue('realign1' in pipeline.nodes.keys())
-        self.assertTrue('coregister1' in pipeline.nodes.keys())
-
-        # Choosing a nii file from the project_8's raw_data folder
-        folder = os.path.join('project_8', 'data', 'raw_data')
-        nii_file = 'Guerbet-C6-2014-Rat-K52-Tube27-2014-02-14_10-23-17-02-G1_Guerbet_Anat-RARE__pvm_-00-02-20.000.nii'
-        nii_no_ext = 'Guerbet-C6-2014-Rat-K52-Tube27-2014-02-14_10-23-17-02-G1_Guerbet_Anat-RARE__pvm_-00-02-20.000'
-        nii_path = os.path.abspath(os.path.join(folder, nii_file))
-
-        # Setting values to verify that the initialization works well
-        pipeline.nodes['smooth1'].set_plug_value('in_files', nii_path)
-        pipeline.nodes['newsegment1'].set_plug_value('channel_files', nii_path)
-        pipeline.nodes['normalize1'].set_plug_value('apply_to_files', nii_path)
-        if os.path.isfile(os.path.join(folder, 'y_' + nii_file)):
-            pipeline.nodes['normalize1'].set_plug_value('deformation_file',
-                                                        os.path.abspath(os.path.join(folder, 'y_' + nii_file)))
-        else:
-            # This makes no sense but for the moment, we only check the initialization
-            # and we just need to put a file in this plug
-            pipeline.nodes['normalize1'].set_plug_value('deformation_file',
-                                                        os.path.abspath(os.path.join(folder, nii_file)))
-
-        pipeline.nodes['realign1'].set_plug_value('in_files', nii_path)
-
-        # This makes no sense but for the moment, we only check the initialization
-        # and we just need to put a file in this plug
-        pipeline.nodes['coregister1'].set_plug_value('apply_to_files', nii_path)
-        pipeline.nodes['coregister1'].set_plug_value('target', nii_path)
-        pipeline.nodes['coregister1'].set_plug_value('source', nii_path)
-
-        # Initialization/run of the pipeline
-        self.main_window.pipeline_manager.initPipeline()
-
-        # Verifying the results
-        self.assertEqual(pipeline.nodes['smooth1'].get_plug_value('smoothed_files'),
-                         os.path.abspath(os.path.join(folder, 's' + nii_file)))
-        self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
-                        os.path.abspath(os.path.join(folder, 'c1' + nii_file)))
-        self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
-                        os.path.abspath(os.path.join(folder, 'c2' + nii_file)))
-        self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
-                        os.path.abspath(os.path.join(folder, 'c3' + nii_file)))
-        self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
-                        os.path.abspath(os.path.join(folder, 'c4' + nii_file)))
-        self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
-                        os.path.abspath(os.path.join(folder, 'c5' + nii_file)))
-        self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
-                        os.path.abspath(os.path.join(folder, 'c6' + nii_file)))
-        self.assertEqual(pipeline.nodes['newsegment1'].get_plug_value('bias_field_images'),
-                         os.path.abspath(os.path.join(folder, 'BiasField_' + nii_file)))
-        self.assertEqual(pipeline.nodes['newsegment1'].get_plug_value('forward_deformation_field'),
-                         os.path.abspath(os.path.join(folder, 'y_' + nii_file)))
-        self.assertEqual(pipeline.nodes['normalize1'].get_plug_value('normalized_files'),
-                         os.path.abspath(os.path.join(folder, 'w' + nii_file)))
-        self.assertEqual(pipeline.nodes['realign1'].get_plug_value('realigned_files'),
-                         os.path.abspath(os.path.join(folder, 'r' + nii_file)))
-        self.assertEqual(pipeline.nodes['realign1'].get_plug_value('mean_image'),
-                         os.path.abspath(os.path.join(folder, 'mean' + nii_file)))
-        self.assertEqual(pipeline.nodes['realign1'].get_plug_value('realignment_parameters'),
-                         os.path.abspath(os.path.join(folder, 'rp_' + nii_no_ext + '.txt')))
-        self.assertEqual(pipeline.nodes['coregister1'].get_plug_value('coregistered_files'),
-                         os.path.abspath(os.path.join(folder, nii_file)))'''
+    # def test_init_MIA_processes(self):
+    #     """
+    #     Adds all the tools processes, initializes and runs the pipeline
+    #     """
+    #
+    #     # Forcing the exit
+    #     self.main_window.force_exit = True
+    #
+    #     # Adding the processes path to the system path
+    #     import sys
+    #     sys.path.append(os.path.join('..', '..', 'processes'))
+    #
+    #     pipeline_editor_tabs = self.main_window.pipeline_manager.pipelineEditorTabs
+    #
+    #     pipeline_editor_tabs.get_current_editor().click_pos = QtCore.QPoint(450, 500)
+    #
+    #     # Importing the package
+    #     package_name = 'MIA_processes.IRMaGe.Tools'
+    #     __import__(package_name)
+    #     pkg = sys.modules[package_name]
+    #     process_class = None
+    #     for name, cls in sorted(list(pkg.__dict__.items())):
+    #         if name != "Input_Filter":
+    #             try:
+    #                 proc_instance = get_process_instance(cls)
+    #             except:
+    #                 pass
+    #             else:
+    #                 print("class", cls)
+    #                 process_class = cls
+    #                 pipeline_editor_tabs.get_current_editor().add_process(process_class)
+    #
+    #     pipeline = pipeline_editor_tabs.get_current_pipeline()
+    #
+    #     # Verifying that all the processes are here
+    #     self.assertTrue('duplicate_file1' in pipeline.nodes.keys())
+    #     self.assertTrue('find_in_list1' in pipeline.nodes.keys())
+    #     self.assertTrue('files_to_list1' in pipeline.nodes.keys())
+    #     self.assertTrue('list_to_file1' in pipeline.nodes.keys())
+    #     self.assertTrue('list_duplicate1' in pipeline.nodes.keys())
+    #     self.assertTrue('roi_list_generator1' in pipeline.nodes.keys())
+    #
+    #     # Setting values to verify that the initialization works well
+    #     pipeline.nodes['duplicate_file1'].set_plug_value('file1', 'test_file.txt')
+    #     pipeline.nodes['find_in_list1'].set_plug_value('in_list', ['test1.txt', 'test2.txt'])
+    #     pipeline.nodes['find_in_list1'].set_plug_value('pattern', '1')
+    #     pipeline.nodes['files_to_list1'].set_plug_value('file1', 'test1.txt')
+    #     pipeline.nodes['files_to_list1'].set_plug_value('file2', 'test2.txt')
+    #     pipeline.nodes['list_to_file1'].set_plug_value('file_list', ['test1.txt', 'test2.txt'])
+    #     pipeline.nodes['list_duplicate1'].set_plug_value('file_name', 'test_file.txt')
+    #     pipeline.nodes['roi_list_generator1'].set_plug_value('pos', ['TEST1', 'TEST2'])
+    #
+    #     # Initialization/run of the pipeline
+    #     self.main_window.pipeline_manager.init_pipeline()
+    #     self.main_window.pipeline_manager.runPipeline()
+    #
+    #     # Verifying the results
+    #     self.assertEqual(pipeline.nodes['duplicate_file1'].get_plug_value('out_file1'), 'test_file.txt')
+    #     self.assertEqual(pipeline.nodes['duplicate_file1'].get_plug_value('out_file2'), 'test_file.txt')
+    #     self.assertEqual(pipeline.nodes['find_in_list1'].get_plug_value('out_file'), 'test1.txt')
+    #     self.assertEqual(pipeline.nodes['files_to_list1'].get_plug_value('file_list'), ['test1.txt', 'test2.txt'])
+    #     self.assertEqual(pipeline.nodes['list_to_file1'].get_plug_value('file'), 'test1.txt')
+    #     self.assertEqual(pipeline.nodes['list_duplicate1'].get_plug_value('out_list'), ['test_file.txt'])
+    #     self.assertEqual(pipeline.nodes['list_duplicate1'].get_plug_value('out_file'), 'test_file.txt')
+    #     self.assertEqual(pipeline.nodes['roi_list_generator1'].get_plug_value('roi_list'), [['TEST1', '_L'],
+    #                                                                                         ['TEST1', '_R'],
+    #                                                                                         ['TEST2', '_L'],
+    #                                                                                         ['TEST2', '_R']])
+    #
+    # def test_init_SPM_pre_processes(self):
+    #     """
+    #     Adds all SPM pre-processes and initializes the pipeline
+    #     """
+    #
+    #     # Forcing the exit
+    #     self.main_window.force_exit = True
+    #
+    #     # Adding the processes path to the system path
+    #     import sys
+    #     sys.path.append(os.path.join('..', '..', 'processes'))
+    #
+    #     pipeline_editor_tabs = self.main_window.pipeline_manager.pipelineEditorTabs
+    #
+    #     pipeline_editor_tabs.get_current_editor().click_pos = QtCore.QPoint(450, 500)
+    #
+    #     # Importing the package
+    #     package_name = 'MIA_processes.SPM'
+    #     __import__(package_name)
+    #     pkg = sys.modules[package_name]
+    #     process_class = None
+    #     preproc_list = ['Smooth', 'NewSegment', 'Normalize', 'Realign', 'Coregister']
+    #     for name, cls in sorted(list(pkg.__dict__.items())):
+    #         if name in preproc_list:
+    #             try:
+    #                 proc_instance = get_process_instance(cls)
+    #             except:
+    #                 pass
+    #             else:
+    #                 process_class = cls
+    #                 pipeline_editor_tabs.get_current_editor().add_process(process_class)
+    #
+    #     pipeline = pipeline_editor_tabs.get_current_pipeline()
+    #
+    #     # Verifying that all the processes are here
+    #     self.assertTrue('smooth1' in pipeline.nodes.keys())
+    #     self.assertTrue('newsegment1' in pipeline.nodes.keys())
+    #     self.assertTrue('normalize1' in pipeline.nodes.keys())
+    #     self.assertTrue('realign1' in pipeline.nodes.keys())
+    #     self.assertTrue('coregister1' in pipeline.nodes.keys())
+    #
+    #     # Choosing a nii file from the project_8's raw_data folder
+    #     folder = os.path.join('project_8', 'data', 'raw_data')
+    #     nii_file = 'Guerbet-C6-2014-Rat-K52-Tube27-2014-02-14_10-23-17-02-G1_Guerbet_Anat-RARE__pvm_-00-02-20.000.nii'
+    #     nii_no_ext = 'Guerbet-C6-2014-Rat-K52-Tube27-2014-02-14_10-23-17-02-G1_Guerbet_Anat-RARE__pvm_-00-02-20.000'
+    #     nii_path = os.path.abspath(os.path.join(folder, nii_file))
+    #
+    #     # Setting values to verify that the initialization works well
+    #     pipeline.nodes['smooth1'].set_plug_value('in_files', nii_path)
+    #     pipeline.nodes['newsegment1'].set_plug_value('channel_files', nii_path)
+    #     pipeline.nodes['normalize1'].set_plug_value('apply_to_files', nii_path)
+    #     if os.path.isfile(os.path.join(folder, 'y_' + nii_file)):
+    #         pipeline.nodes['normalize1'].set_plug_value('deformation_file',
+    #                                                     os.path.abspath(os.path.join(folder, 'y_' + nii_file)))
+    #     else:
+    #         # This makes no sense but for the moment, we only check the initialization
+    #         # and we just need to put a file in this plug
+    #         pipeline.nodes['normalize1'].set_plug_value('deformation_file',
+    #                                                     os.path.abspath(os.path.join(folder, nii_file)))
+    #
+    #     pipeline.nodes['realign1'].set_plug_value('in_files', nii_path)
+    #
+    #     # This makes no sense but for the moment, we only check the initialization
+    #     # and we just need to put a file in this plug
+    #     pipeline.nodes['coregister1'].set_plug_value('apply_to_files', nii_path)
+    #     pipeline.nodes['coregister1'].set_plug_value('target', nii_path)
+    #     pipeline.nodes['coregister1'].set_plug_value('source', nii_path)
+    #
+    #     # Initialization/run of the pipeline
+    #     self.main_window.pipeline_manager.init_pipeline()
+    #
+    #     # Verifying the results
+    #     self.assertEqual(pipeline.nodes['smooth1'].get_plug_value('smoothed_files'),
+    #                      os.path.abspath(os.path.join(folder, 's' + nii_file)))
+    #     self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
+    #                     os.path.abspath(os.path.join(folder, 'c1' + nii_file)))
+    #     self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
+    #                     os.path.abspath(os.path.join(folder, 'c2' + nii_file)))
+    #     self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
+    #                     os.path.abspath(os.path.join(folder, 'c3' + nii_file)))
+    #     self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
+    #                     os.path.abspath(os.path.join(folder, 'c4' + nii_file)))
+    #     self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
+    #                     os.path.abspath(os.path.join(folder, 'c5' + nii_file)))
+    #     self.assertTrue(pipeline.nodes['newsegment1'].get_plug_value('native_class_images'),
+    #                     os.path.abspath(os.path.join(folder, 'c6' + nii_file)))
+    #     self.assertEqual(pipeline.nodes['newsegment1'].get_plug_value('bias_field_images'),
+    #                      os.path.abspath(os.path.join(folder, 'BiasField_' + nii_file)))
+    #     self.assertEqual(pipeline.nodes['newsegment1'].get_plug_value('forward_deformation_field'),
+    #                      os.path.abspath(os.path.join(folder, 'y_' + nii_file)))
+    #     self.assertEqual(pipeline.nodes['normalize1'].get_plug_value('normalized_files'),
+    #                      os.path.abspath(os.path.join(folder, 'w' + nii_file)))
+    #     self.assertEqual(pipeline.nodes['realign1'].get_plug_value('realigned_files'),
+    #                      os.path.abspath(os.path.join(folder, 'r' + nii_file)))
+    #     self.assertEqual(pipeline.nodes['realign1'].get_plug_value('mean_image'),
+    #                      os.path.abspath(os.path.join(folder, 'mean' + nii_file)))
+    #     self.assertEqual(pipeline.nodes['realign1'].get_plug_value('realignment_parameters'),
+    #                      os.path.abspath(os.path.join(folder, 'rp_' + nii_no_ext + '.txt')))
+    #     self.assertEqual(pipeline.nodes['coregister1'].get_plug_value('coregistered_files'),
+    #                      os.path.abspath(os.path.join(folder, nii_file)))
 
     def test_iteration_table(self):
         """
@@ -1998,7 +1997,7 @@ class TestMIAPipelineManager(unittest.TestCase):
         config = Config()
         mia_path = config.get_mia_path()
         project_8_path = os.path.join(mia_path, 'resources', 'mia', 'project_8')
-        self.main_window.switch_project(project_8_path, "project_8", "project_8")
+        self.main_window.switch_project(project_8_path, "project_8")
 
         iteration_table = self.main_window.pipeline_manager.iterationTable
         iteration_table.check_box_iterate.setChecked(True)

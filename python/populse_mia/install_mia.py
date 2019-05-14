@@ -2,7 +2,12 @@ import os
 import sys
 import yaml
 import shutil
+
+# PyQt5 imports
 from PyQt5 import QtWidgets, QtGui, QtCore
+
+# Populse_MIA imports
+from populse_mia.utils.utils import verCmp
 
 
 class MIAInstallWidget(QtWidgets.QWidget):
@@ -220,8 +225,14 @@ class MIAInstallWidget(QtWidgets.QWidget):
     @staticmethod
     def load_config(config_file):
         with open(config_file, 'r') as stream:
+            
             try:
-                return yaml.load(stream)
+                if verCmp(yaml.__version__, '5.1', 'sup'):
+                    return yaml.load(stream, Loader=yaml.FullLoader)
+                
+                else:    
+                    return yaml.load(stream)
+            
             except yaml.YAMLError as exc:
                 print(exc)
 

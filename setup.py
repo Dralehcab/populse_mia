@@ -3,6 +3,7 @@ from setuptools import find_packages, setup
 
 # Select modules to include in distribution
 modules = find_packages('python')
+print('\nmodules found: ', modules)
 
 # Additional script files to include in distribution
 scripts = []
@@ -21,7 +22,6 @@ python_dir = os.path.join(os.path.dirname(__file__), 'python')
 with open(os.path.join(python_dir, 'populse_mia', 'info.py')) as f:
     code = f.read()
     exec(code, release_info)
-
 
 # Build the setup
 setup(

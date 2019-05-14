@@ -2,7 +2,7 @@ import sys
 
 # Current version
 version_major = 1
-version_minor = 0
+version_minor = 1
 version_micro = 1
 version_extra = ""
 
@@ -16,7 +16,11 @@ CLASSIFIERS = ['Development Status :: 5 - Production/Stable',
                'License :: OSI Approved :: CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1)',
                'Topic :: Software Development :: Libraries :: Python Modules',
                'Operating System :: OS Independent',
-               'Programming Language :: Python',
+               'Programming Language :: Python :: 3.5',
+               'Programming Language :: Python :: 3.6',
+               'Programming Language :: Python :: 3.7',
+               'Programming Language :: Python :: 3.8',
+               'Programming Language :: Python :: 3 :: Only',
                'Topic :: Scientific/Engineering',
                'Topic :: Utilities']
 
@@ -44,25 +48,55 @@ LICENSE = 'CeCILL'
 VERSION = __version__
 CLASSIFIERS = CLASSIFIERS
 PLATFORMS = 'OS Independent'
-REQUIRES = [
-  'SIP',  
-  'pyqt5',
-  'pyyaml',
-  'python-dateutil',
-  'sqlalchemy',
-  'lark-parser',
-  'scipy',
-  'nibabel',
-  'snakeviz',
-  'pillow',
-  'matplotlib',
-  'traits',
-  'capsul',
-  'soma_workflow',
-  'nipype',
-  'scikit-image',
-  'populse-db'
+
+if sys.version_info < (3 , 6) and sys.version_info >= (3 , 5):
+    REQUIRES = [
+        'capsul',
+        'lark-parser<0.7.0',
+        'matplotlib<3.1',
+        'mia-processes',
+        'nibabel',
+        'nipype',
+        'pillow',
+        'populse-db',
+        'pyqt5',
+        'python-dateutil',
+        'pyyaml',
+        'scikit-image',
+        'scipy',
+        'SIP',
+        'sqlalchemy',
+        'snakeviz',
+        'soma_workflow',
+        'traits',
 ]
+
+elif sys.version_info >= (3 , 6):
+    REQUIRES = [
+        'capsul',
+        'lark-parser<0.7.0',
+        'matplotlib',
+        'mia-processes',
+        'nibabel',
+        'nipype',
+        'pillow',
+        'populse-db',
+        'pyqt5',
+        'python-dateutil',
+        'pyyaml',
+        'scikit-image',
+        'scipy',
+        'SIP',  
+        'sqlalchemy',
+        'snakeviz',
+        'soma_workflow',
+        'traits',
+]
+
+else:
+    # python < 3.5 is not compatible anyway
+    REQUIRES = []
+
 EXTRA_REQUIRES = {
     'doc': [
         'sphinx>=1.0',
