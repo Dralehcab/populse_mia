@@ -1337,9 +1337,15 @@ class TableDataBrowser(QTableWidget):
         :return: index of the row of the scan
         """
 
+
         for row in range(0, self.rowCount()):
+            print('**************')
             item = self.item(row, 0)
             scan_name = item.text()
+            print(row)
+            print(scan_name)
+            print('?=')
+            print(scan)
             if scan_name == scan:
                 return row
 
@@ -1656,6 +1662,8 @@ class TableDataBrowser(QTableWidget):
 
         # Scans that became visible must be visible
         for scan in self.scans_to_visualize:
+            print(scan)
+            print(self.get_scan_row(scan))
             self.setRowHidden(self.get_scan_row(scan), False)
 
         self.resizeColumnsToContents()  # Columns resized

@@ -92,6 +92,8 @@ class ProcessMIA(Process):
                         for single_value in output_value:
                             self.manage_brick_output_before_run(single_value)
                     else:
+                        print(output_value)
+                        print(type(output_value))
                         self.manage_brick_output_before_run(output_value)
 
     def manage_brick_after_run(self):
@@ -109,8 +111,6 @@ class ProcessMIA(Process):
                             self.manage_brick_output_after_run(single_value)
                     else:
                         self.manage_brick_output_after_run(output_value)
-            else:
-                print('Out')
 
     def get_scan_bricks(self, output_value):
         """
