@@ -229,8 +229,14 @@ class IterationTable(QWidget):
             self.iteration_table.setHorizontalHeaderItem(idx, item)
 
         # Searching the database scans that correspond to the iterated tag value
+
         filter_query = "({" + self.iterated_tag + "} " + "==" + " \"" + self.combo_box.currentText() + "\")"
         scans_list = self.project.session.filter_documents(COLLECTION_CURRENT, filter_query)
+
+        for document in scans_list:
+            print(document)
+
+
         scans_res = [getattr(document, TAG_FILENAME) for document in scans_list]
 
         # Taking the intersection between the found database scans and the user selection in the data_browser

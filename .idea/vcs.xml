@@ -75,5 +75,7 @@
     <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190513161256" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190513162859" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190513173349" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190520161931" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/processes/processes_populse_mia_20190521145728" vcs="Git" />
   </component>
 </project>

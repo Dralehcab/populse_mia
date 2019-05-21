@@ -4,17 +4,18 @@ chain_cursors: 'yes'
 clinical_mode: 'no'
 matlab: /usr/local/MATLAB/R2018b/bin/matlab
 matlab_standalone: ''
-max_projects: 5.0
+max_projects: 5
 mia_path: /home/broche/Code/Python/populse_mia
 mri_conv_path: /home/broche/Code/Java/MRIFileManager/MRIManager.jar
 name: MIA
 nb_slices_max: '10'
-opened_projects: []
-projects_save_path: /home/broche/Code/Python/populse_mia/projects
+opened_projects:
+- ../../../../../../../media/broche/LocalData/MIA_Data/DataBase_Anat/DataBaseAnat
+projects_save_path: /media/broche/LocalData/MIA_Data
 show_all_slices: 'no'
 spm: /home/broche/Installs/spm12
 text_color: ''
 thumbnail_tag: SequenceName
-use_matlab: 'yes'
-use_spm: 'yes'
+use_matlab: 'no'
+use_spm: 'no'
 use_spm_standalone: 'no'

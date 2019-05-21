@@ -56,6 +56,8 @@ from populse_mia.pipeline_manager.pipeline_editor import PipelineEditorTabs
 from populse_mia.pipeline_manager.process_library import ProcessLibraryWidget
 from populse_mia.software_properties.config import Config
 
+import numpy as np
+
 if sys.version_info[0] >= 3:
     unicode = str
 
@@ -729,6 +731,9 @@ class PipelineManagerTab(QWidget):
 
             for key in inputs:
 
+                if type(inputs[key]) is np.ndarray:
+                    inputs[key] = "<undefined>"
+
                 if inputs[key] is Undefined:
                     inputs[key] = "<undefined>"
 
@@ -806,7 +811,12 @@ class PipelineManagerTab(QWidget):
                 value = outputs[key]
                 if value is Undefined:
                     outputs[key] = "<undefined>"
+                if type(value) is np.ndarray:
+                    outputs[key] = "<undefined>"
+
+
             self.project.saveModifications()
+
             self.project.session.set_value(COLLECTION_BRICK, self.brick_id,
                                            BRICK_INPUTS, inputs)
             self.project.session.set_value(COLLECTION_BRICK, self.brick_id,
@@ -855,11 +865,17 @@ class PipelineManagerTab(QWidget):
                 value = inputs[key]
                 if value is Undefined:
                     inputs[key] = "<undefined>"
+                if type(value) is np.ndarray:
+                    inputs[key] = "<undefined>"
+
             outputs = process.get_outputs()
             for key in outputs:
                 value = outputs[key]
                 if value is Undefined:
                     outputs[key] = "<undefined>"
+                if type(value) is np.ndarray:
+                    outputs[key] = "<undefined>"
+
             self.project.session.set_value(COLLECTION_BRICK, self.brick_id,
                                            BRICK_INPUTS, inputs)
             self.project.session.set_value(COLLECTION_BRICK, self.brick_id,
